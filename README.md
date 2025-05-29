@@ -1,45 +1,78 @@
 <div align="center">
 <h1>Project_Design Power 📖</h1>
-이 프로젝트는 저의 전문적 개발 역량과 실전 프로젝트 경험을 바탕으로 제작되었습니다.
+이 프로젝트는 기업을 소개하기 위한 반응형 웹 사이트로 제작되었습니다.
 </div>
 
 <br>
+<br>
 
-<image width="100%" src="portfolio page.gif"></image>
+<image width="100%" src="header.png"></image>
+
 <br>
 <br>
 
-## 📝 프로젝트 구성
-### 1. Home
-섬세한 디자인과 핵심 메시지로 강한 인상을 전달합니다.<br>
-Resume, Github 바로 받아볼 수 있는 링크를 제공하였습니다.
-
-### 2. About Me
-프로젝트를 진행하면서 습득한 지식과 기술을 바탕으로 끊임없이 배우고 성장하는 개발자로서의 비전을 소개하였습니다.
-
-### 3. Skills
-React, Javascript, HTML, CSS, SCSS 등 사용 가능한 기술과 경험을 요약하였습니다.
-
-### 4. Projects
-다양한 사이트를 리뉴얼한 주요 프로젝트를 소개하였습니다.<br>
-사용 가능한 기술들을 활용하여 구성하고, 구현한 기능과 사용된 기술을 명시하였습니다.
-
-### 5. Open Source
-다양한 라이브러리를 활용하여 웹을 구현하고 결과물을 소개하였습니다.
-
-### 6. Contact
-개인정보를 제공합니다.
+## 💡 Skills
+<p>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?&style=for-the-badge&logo=JavaScript&logoColor=white"/>
+<img src="https://img.shields.io/badge/html5-E34F26?&style=for-the-badge&logo=HTML5&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?&style=for-the-badge&logo=CSS&logoColor=white"/>
+</p>
 
 <br>
 <br>
 
 ## 🔖 주요 특징
-#### 디자인 :
-* 반응형 레이아웃과 사용자 경험을 최우선으로 고려한 직관적인 디자인 구성
-#### 애니메이션 : 
-* GSAP와 ScrollTrigger, Swiper.js 등을 활용한 부드럽고 매끄러운 화면 전환 및 동적 애니메이션 효과 구현
-#### 기술스택 : 
-* JavaScript를 기반으로 최신 기술 스택을 사용하여 효율적이고 트렌디한 웹 페이지 개발
+### 1. Main : 
+```
+let naviControl=document.querySelectorAll(".swiper-navi .swiper-pagination-switch");
+
+const mainSwiper=new Swiper(".main-swiper", {
+	speed: 1000,
+	loop: true,
+	effect: "fade",
+	/*
+	autoplay: {
+		delay: 3000
+	},
+	*/
+	pagination: {
+		el: ".swiper-navi .swiper-pagination",
+		type: "progressbar"
+	},
+	on: {
+		init: function(){
+			naviControl.forEach(function(item, i){
+				if(i == this.realIndex){
+					item.classList.add("active");
+				}
+				else{
+					item.classList.remove("active");
+				}
+			});
+		},
+		slideChangeTransitionStart: function(){
+			naviControl.forEach(function(item, i){
+				if(i == this.realIndex){
+					item.classList.add("active");
+				}
+				else{
+					item.classList.remove("active");
+				}
+			});
+		}
+	}
+});
+
+naviControl.forEach(function(item, i){
+	item.addEventListener("click", function(){
+		mainSwiper.slideToLoop(i);
+	});
+});
+
+initHeader();
+initTopMove();
+initFamilySite();
+```
 
 <br>
 <br>
