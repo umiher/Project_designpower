@@ -83,8 +83,30 @@ naviControl.forEach(function(item, i){
 <br>
 <br>
 
-### 2. 
+### 2. GSAP :
+```
+const tl1=gsap.timeline({
+	scrollTrigger: {
+		trigger: ".pin1",
+		scrub: 1,
+		pin: ".pin1",
+		start:"top top",
+		end: "+=300%"
+	}
+});
 
+tl1.to(".sec2 .title-m", { color: "#fff", duration: 4 })
+.to(".sec2 .color", { alpha: 0, duration: 4, delay: -3 })
+.to(".sec2 .white", { alpha: 1, duration: 4, delay: -4 })
+.to(".sec2 .image", { alpha:1, duration: 4, delay: -4 })
+.to(".sec2 .title1", { alpha: 0, duration: 2, delay: 1 })
+.to(".sec2 .title2", { alpha: 1 , duration: 2, delay: 1 })
+.to(".sec2 .title2 p span", { y: 0, duration: 3, delay: 1 });
+```
+
+<br>
+
+> **GSAP 라이브러리를 사용하여 자연스러운 애니메이션 효과를 구현하였습니다.**
 
 <br>
 <br>
