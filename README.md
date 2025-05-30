@@ -27,7 +27,7 @@
 
 ## 🔖 주요 특징
 ### 1. Main : 
-```
+```c
 let naviControl=document.querySelectorAll(".swiper-navi .swiper-pagination-switch");
 
 const mainSwiper=new Swiper(".main-swiper", {
@@ -84,7 +84,7 @@ naviControl.forEach(function(item, i){
 <br>
 
 ### 2. GSAP :
-```
+```c
 const tl1=gsap.timeline({
 	scrollTrigger: {
 		trigger: ".pin1",
@@ -112,7 +112,7 @@ tl1.to(".sec2 .title-m", { color: "#fff", duration: 4 })
 <br>
 
 ### 3. Mobile Navigation :
-```
+```c
 tab.addEventListener("click", function(e){
 	e.preventDefault();
 
