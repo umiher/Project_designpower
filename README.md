@@ -17,7 +17,7 @@
 <img src="https://img.shields.io/badge/CSS3-1572B6?&style=for-the-badge&logo=CSS&logoColor=white"/>
 </p>
 
-> **JavaScript와 SiwperJS 라이브러리를 이용하여 반응형 웹 페이지를 제작하고**
+> **JavaScript와 SiwperJS 라이브러리를 이용하여 리뉴얼 웹 페이지를 제작하고**
 > <br>
 > **ScrollTrigger 라이브러리를 이용해 사이트가 스크롤에 반응하는 사이트를 구현하였습니다.**
 
@@ -83,7 +83,13 @@ naviControl.forEach(function(item, i){
 <br>
 <br>
 
-### 2. Mobile Navigation :
+### 2. 
+
+
+<br>
+<br>
+
+### 3. Mobile Navigation :
 ```
 tab.addEventListener("click", function(e){
 	e.preventDefault();
