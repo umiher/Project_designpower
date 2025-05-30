@@ -68,40 +68,114 @@ naviControl.forEach(function(item, i){
 		mainSwiper.slideToLoop(i);
 	});
 });
-
-initHeader();
-initTopMove();
-initFamilySite();
 ```
 
 <br>
-<br>
 
-## 📂 주요 프로젝트
-### 1. Design Power 리뉴얼
-- 기술스택 : JavaScript, GSAP, Mobile Navigation, HTML, CSS3
-- 상세설명 :
-  * Design Power는 기업을 소개하기 위한 반응형 웹 사이트로 제작
-  * GSAP 라이브러리를 사용하여 자연스러운 애니메이션 효과 구현
-
-<br>
-
-### 2. O'kitchen 리뉴얼
-- 기술스택 : JavaScript, SwiperJS, Google Maps API, Mobile Navigation, HTML5, CSS
-- 상세설명 :
-  * HTML, CSS, JavaScript를 활용하여 반응형 웹 디자인과 모바일 내비게이션 기능을 제공
-  * Google Maps API와 Swiper.js를 이용해 동적인 지도 표시와 슬라이더 효과 등을 구현
-
-<br>
-
-### 3. Wylie 리뉴얼
-- 기술스택 : JavaScript, GSAP, HTML, CSS3
-- 상세설명 :
-  * GSAP를 활용하여 스크롤 애니메이션 및 다양한 UI구현
-  * 직관적인 네비게이션, 모바일 메뉴, 위치 기반 시각적 효과로 모바일과 웹에서 최적화된 사용자 경험을 제공
+> **swiperJS 기능을 활용하여 이미지 슬라이더를 구현하였습니다.**
+> <br>
+> **또한 pagination을 적용하여 슬라이더 순서를 알려주는 네비게이션 역할을 설정하였습니다.**
 
 <br>
 <br>
 
-## 💬 Contact
-#### E-mail : uumih98@gmail.com
+### 2. Mobile Navigation :
+```
+tab.addEventListener("click", function(e){
+	e.preventDefault();
+
+	if(header.classList.contains("menu-open") == false){
+		header.classList.add("menu-open");
+
+		menuLi.forEach(function(item){
+			if(item.classList.contains("open") == true){
+				item.classList.remove("open");
+			}
+		});
+	}
+	else{
+		header.classList.remove("menu-open");
+	}
+});
+
+dimmed.addEventListener("click", function(){
+	header.classList.remove("menu-open");
+});
+
+menuLi.forEach(function(item, i){
+	item.addEventListener("mouseenter", function(){
+		if(device == "mobile") return;
+
+		header.classList.add("on");
+
+		for(let j=0; j<menuLi.length; j++){
+			if(j == i){
+				menuLi[j].classList.add("on");
+			}
+			else{
+				menuLi[j].classList.remove("on");
+			}
+		}
+	});
+});
+
+header.addEventListener("mouseleave", function(){
+	if(device == "mobile") return;
+
+	header.classList.remove("on");
+});
+
+menuLi.forEach(function(item, i){
+	item.addEventListener("click", function(e){
+		if(device == "desktop") return;
+
+		e.preventDefault();
+
+		if(e.currentTarget.classList.contains("open") == false){
+			for(let j=0; j<menuLi.length; j++){
+				if(j == i){
+					menuLi[j].classList.add("open");
+				}
+				else{
+					menuLi[j].classList.remove("open");
+				}
+			}
+		}
+		else{
+			e.currentTarget.classList.remove("open");
+		}
+	});
+});
+
+function resizeFunction(){
+	let winw=window.innerWidth;
+
+	if(winw < 1281){ // mobile
+		if(device == "mobile") return;
+		device="mobile";
+	}
+	else{ // desktop
+		if(device == "desktop") return;
+		device="desktop";
+	}
+}
+
+resizeFunction();
+
+window.addEventListener("resize", function(){
+	if(header.classList.contains("menu-open")){
+		header.classList.remove("menu-open");
+	}
+
+	resizeFunction();
+});
+```
+
+<br>
+
+> **Tab을 이용하여 Mobile Menu를 구현하였습니다.**
+
+<br>
+<br>
+
+
