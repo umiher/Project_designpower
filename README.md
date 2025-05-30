@@ -7,7 +7,7 @@
 
 <image width="100%" src="main.png"></image>
 
-📄 View : https://project-designpower.vercel.app/
+📄 [View More](https://project-designpower.vercel.app/)
 
 <br>
 <br>
