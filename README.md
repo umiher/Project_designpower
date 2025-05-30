@@ -11,7 +11,7 @@
 
 <div align="center">
 	
-☁ [View More](https://project-designpower.vercel.app/) ☁
+☁ [Visit Site](https://project-designpower.vercel.app/) ☁
 
 </div>
 
