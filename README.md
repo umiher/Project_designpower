@@ -4,7 +4,6 @@
 </div>
 
 <br>
-<br>
 
 <image width="100%" src="header.png"></image>
 
