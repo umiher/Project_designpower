@@ -5,7 +5,7 @@
 
 <br>
 
-<image width="100%" src="header.png"></image>
+<image width="100%" src="main.png"></image>
 
 <br>
 <br>
