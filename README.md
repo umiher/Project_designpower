@@ -17,7 +17,7 @@
 <img src="https://img.shields.io/badge/CSS3-1572B6?&style=for-the-badge&logo=CSS&logoColor=white"/>
 </p>
 
-> **JavaScript와 SiwperJS 라이브러리를 이용하여 리뉴얼 웹 페이지를 제작하고**
+> **JavaScript와 SiwperJS 라이브러리를 이용하여 리뉴얼 웹 페이지를 제작하고,**
 > <br>
 > **ScrollTrigger 라이브러리를 이용해 사이트가 스크롤에 반응하는 사이트를 구현하였습니다.**
 
@@ -78,7 +78,7 @@ naviControl.forEach(function(item, i){
 
 > **swiperJS 기능을 활용하여 이미지 슬라이더를 구현하였습니다.**
 > <br>
-> **또한 pagination을 적용하여 슬라이더 순서를 알려주는 네비게이션 역할을 설정하였습니다.**
+> **pagination을 적용하여 슬라이더 순서를 알려주는 네비게이션 역할을 설정하였습니다.**
 
 <br>
 <br>
