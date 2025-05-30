@@ -1,74 +1,213 @@
 <div align="center">
 <h1>Project_Design Power 📖</h1>
-이 프로젝트는 저의 전문적 개발 역량과 실전 프로젝트 경험을 바탕으로 제작되었습니다.
+이 프로젝트는 기업을 소개하기 위한 반응형 웹 사이트로 제작되었습니다.
 </div>
 
 <br>
 
-<image width="100%" src="portfolio page.gif"></image>
+<image width="100%" src="header.png"></image>
+
 <br>
 <br>
 
-## 📝 프로젝트 구성
-### 1. Home
-섬세한 디자인과 핵심 메시지로 강한 인상을 전달합니다.<br>
-Resume, Github 바로 받아볼 수 있는 링크를 제공하였습니다.
+## 💡 Skills
+<p>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?&style=for-the-badge&logo=JavaScript&logoColor=white"/>
+<img src="https://img.shields.io/badge/html5-E34F26?&style=for-the-badge&logo=HTML5&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?&style=for-the-badge&logo=CSS&logoColor=white"/>
+</p>
 
-### 2. About Me
-프로젝트를 진행하면서 습득한 지식과 기술을 바탕으로 끊임없이 배우고 성장하는 개발자로서의 비전을 소개하였습니다.
+> **JavaScript와 SiwperJS 라이브러리를 이용하여 리뉴얼 웹 페이지를 제작하고**
+> <br>
+> **ScrollTrigger 라이브러리를 이용해 사이트가 스크롤에 반응하는 사이트를 구현하였습니다.**
 
-### 3. Skills
-React, Javascript, HTML, CSS, SCSS 등 사용 가능한 기술과 경험을 요약하였습니다.
-
-### 4. Projects
-다양한 사이트를 리뉴얼한 주요 프로젝트를 소개하였습니다.<br>
-사용 가능한 기술들을 활용하여 구성하고, 구현한 기능과 사용된 기술을 명시하였습니다.
-
-### 5. Open Source
-다양한 라이브러리를 활용하여 웹을 구현하고 결과물을 소개하였습니다.
-
-### 6. Contact
-개인정보를 제공합니다.
 
 <br>
 <br>
 
 ## 🔖 주요 특징
-#### 디자인 :
-* 반응형 레이아웃과 사용자 경험을 최우선으로 고려한 직관적인 디자인 구성
-#### 애니메이션 : 
-* GSAP와 ScrollTrigger, Swiper.js 등을 활용한 부드럽고 매끄러운 화면 전환 및 동적 애니메이션 효과 구현
-#### 기술스택 : 
-* JavaScript를 기반으로 최신 기술 스택을 사용하여 효율적이고 트렌디한 웹 페이지 개발
+### 1. Main : 
+```
+let naviControl=document.querySelectorAll(".swiper-navi .swiper-pagination-switch");
+
+const mainSwiper=new Swiper(".main-swiper", {
+	speed: 1000,
+	loop: true,
+	effect: "fade",
+	/*
+	autoplay: {
+		delay: 3000
+	},
+	*/
+	pagination: {
+		el: ".swiper-navi .swiper-pagination",
+		type: "progressbar"
+	},
+	on: {
+		init: function(){
+			naviControl.forEach(function(item, i){
+				if(i == this.realIndex){
+					item.classList.add("active");
+				}
+				else{
+					item.classList.remove("active");
+				}
+			});
+		},
+		slideChangeTransitionStart: function(){
+			naviControl.forEach(function(item, i){
+				if(i == this.realIndex){
+					item.classList.add("active");
+				}
+				else{
+					item.classList.remove("active");
+				}
+			});
+		}
+	}
+});
+
+naviControl.forEach(function(item, i){
+	item.addEventListener("click", function(){
+		mainSwiper.slideToLoop(i);
+	});
+});
+```
+
+<br>
+
+> **swiperJS 기능을 활용하여 이미지 슬라이더를 구현하였습니다.**
+> <br>
+> **또한 pagination을 적용하여 슬라이더 순서를 알려주는 네비게이션 역할을 설정하였습니다.**
 
 <br>
 <br>
 
-## 📂 주요 프로젝트
-### 1. Design Power 리뉴얼
-- 기술스택 : JavaScript, GSAP, Mobile Navigation, HTML, CSS3
-- 상세설명 :
-  * Design Power는 기업을 소개하기 위한 반응형 웹 사이트로 제작
-  * GSAP 라이브러리를 사용하여 자연스러운 애니메이션 효과 구현
+### 2. GSAP :
+```
+const tl1=gsap.timeline({
+	scrollTrigger: {
+		trigger: ".pin1",
+		scrub: 1,
+		pin: ".pin1",
+		start:"top top",
+		end: "+=300%"
+	}
+});
+
+tl1.to(".sec2 .title-m", { color: "#fff", duration: 4 })
+.to(".sec2 .color", { alpha: 0, duration: 4, delay: -3 })
+.to(".sec2 .white", { alpha: 1, duration: 4, delay: -4 })
+.to(".sec2 .image", { alpha:1, duration: 4, delay: -4 })
+.to(".sec2 .title1", { alpha: 0, duration: 2, delay: 1 })
+.to(".sec2 .title2", { alpha: 1 , duration: 2, delay: 1 })
+.to(".sec2 .title2 p span", { y: 0, duration: 3, delay: 1 });
+```
 
 <br>
 
-### 2. O'kitchen 리뉴얼
-- 기술스택 : JavaScript, SwiperJS, Google Maps API, Mobile Navigation, HTML5, CSS
-- 상세설명 :
-  * HTML, CSS, JavaScript를 활용하여 반응형 웹 디자인과 모바일 내비게이션 기능을 제공
-  * Google Maps API와 Swiper.js를 이용해 동적인 지도 표시와 슬라이더 효과 등을 구현
-
-<br>
-
-### 3. Wylie 리뉴얼
-- 기술스택 : JavaScript, GSAP, HTML, CSS3
-- 상세설명 :
-  * GSAP를 활용하여 스크롤 애니메이션 및 다양한 UI구현
-  * 직관적인 네비게이션, 모바일 메뉴, 위치 기반 시각적 효과로 모바일과 웹에서 최적화된 사용자 경험을 제공
+> **GSAP 라이브러리를 사용하여 자연스러운 애니메이션 효과를 구현하였습니다.**
 
 <br>
 <br>
 
-## 💬 Contact
-#### E-mail : uumih98@gmail.com
+### 3. Mobile Navigation :
+```
+tab.addEventListener("click", function(e){
+	e.preventDefault();
+
+	if(header.classList.contains("menu-open") == false){
+		header.classList.add("menu-open");
+
+		menuLi.forEach(function(item){
+			if(item.classList.contains("open") == true){
+				item.classList.remove("open");
+			}
+		});
+	}
+	else{
+		header.classList.remove("menu-open");
+	}
+});
+
+dimmed.addEventListener("click", function(){
+	header.classList.remove("menu-open");
+});
+
+menuLi.forEach(function(item, i){
+	item.addEventListener("mouseenter", function(){
+		if(device == "mobile") return;
+
+		header.classList.add("on");
+
+		for(let j=0; j<menuLi.length; j++){
+			if(j == i){
+				menuLi[j].classList.add("on");
+			}
+			else{
+				menuLi[j].classList.remove("on");
+			}
+		}
+	});
+});
+
+header.addEventListener("mouseleave", function(){
+	if(device == "mobile") return;
+
+	header.classList.remove("on");
+});
+
+menuLi.forEach(function(item, i){
+	item.addEventListener("click", function(e){
+		if(device == "desktop") return;
+
+		e.preventDefault();
+
+		if(e.currentTarget.classList.contains("open") == false){
+			for(let j=0; j<menuLi.length; j++){
+				if(j == i){
+					menuLi[j].classList.add("open");
+				}
+				else{
+					menuLi[j].classList.remove("open");
+				}
+			}
+		}
+		else{
+			e.currentTarget.classList.remove("open");
+		}
+	});
+});
+
+function resizeFunction(){
+	let winw=window.innerWidth;
+
+	if(winw < 1281){ // mobile
+		if(device == "mobile") return;
+		device="mobile";
+	}
+	else{ // desktop
+		if(device == "desktop") return;
+		device="desktop";
+	}
+}
+
+resizeFunction();
+
+window.addEventListener("resize", function(){
+	if(header.classList.contains("menu-open")){
+		header.classList.remove("menu-open");
+	}
+
+	resizeFunction();
+});
+```
+
+<br>
+
+> **Tab을 이용하여 Mobile Menu를 구현하였습니다.**
+
+<br>
+<br>
+
+
